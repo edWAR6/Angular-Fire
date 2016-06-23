@@ -7,13 +7,14 @@ angular.module('videogames.factories', [])
 	var games = {};
 	var ref = firebase.database().ref().child('games');
 
-	games.list = function(){
+	games.list = function(){		
 		var list = $firebaseArray(ref);
 		return list.$loaded();
 	};
 
-	games.add = function(){
-		// ...
+	games.add = function(game){
+		var list = $firebaseArray(ref);
+		return list.$add(game);
 	};
 
 	return games;
