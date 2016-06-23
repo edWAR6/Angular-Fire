@@ -9,4 +9,13 @@ angular.module('videogames.controllers', [])
 		console.log(error);
 		alert(error.message);
 	});
+
+	list.add = function(){
+		$games.add(list.game).then(function(){
+			alert('Success!');
+		}, function(error){
+			alert('Error');
+			console.log(error);
+		});
+	};
 });

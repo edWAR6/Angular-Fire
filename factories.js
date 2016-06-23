@@ -5,10 +5,9 @@ angular.module('videogames.factories', [])
 
 .factory('$games', function($firebaseArray){
 	var games = {};
+	var ref = firebase.database().ref().child('games');
 
 	games.list = function(){
-		var ref = firebase.database().ref().child('games');
-
 		var list = $firebaseArray(ref);
 		return list.$loaded();
 	};
