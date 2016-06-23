@@ -9,8 +9,13 @@ angular.module('videogames', ['videogames.controllers', 'videogames.factories', 
 		templateUrl: "views/games.html",
 		controller: 'listController as list'
 	})
-	.when('/game:gameId', {
-		templateUrl: "views/game.html"
+	.when('/game/:id', {
+		templateUrl: "views/game.html",
+		controller: 'editController as game'
+	})
+	.when('/new', {
+		templateUrl: "views/game.html",
+		controller: 'addController as game'
 	})
 	.otherwise({
 		redirectTo: '/'
